@@ -76,8 +76,6 @@ namespace C__Doodle.Classes
                         {
                             if (!usedBonus)
                                 return true;
-                            else
-                                return false;
                         }
                     }
                 }

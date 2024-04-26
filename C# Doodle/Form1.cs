@@ -25,6 +25,7 @@ namespace C__Doodle
             this.Width = 430;
             this.Paint += new PaintEventHandler(OnRepaint);
         }
+        private PictureBox pauseOverlay;
         public void Init()
         {
             PlatformController.platforms = new List<Platform> ();
@@ -36,6 +37,13 @@ namespace C__Doodle
             PlatformController.bullets.Clear();
             PlatformController.enemies.Clear();
             PlatformController.bonuses.Clear();
+            pauseOverlay = new PictureBox();
+            pauseOverlay.Image = Properties.Resources.Paused;
+            pauseOverlay.SizeMode = PictureBoxSizeMode.AutoSize;
+            pauseOverlay.Visible = false;
+            this.Controls.Add(pauseOverlay);
+            label3.Visible = false; 
+            pauseOverlay.BringToFront();
             player = new Player();
         }
         private void OnKeyboardUp(object sender, KeyEventArgs e)
@@ -71,6 +79,7 @@ namespace C__Doodle
                 //    break;
             }
         }
+        private bool isPaused = false;
         private void OnKeyboardPressed(object sender, KeyEventArgs e)
         {
             switch(e.KeyCode.ToString())
@@ -87,6 +96,25 @@ namespace C__Doodle
                     break;
                 case "Escape":
                     Application.Exit();
+                    break;
+                case "Tab":
+                    isPaused = !isPaused;
+                    if (isPaused)
+                    {
+                        label3.Visible = true;
+                        label3.BackColor = Color.FromArgb(208, 249, 255);
+                        label3.Text =""+ PlatformController.score;
+                        label3.AutoSize = true;
+                        label3.BringToFront();
+                        timer1.Enabled=false;
+                        pauseOverlay.Visible = true;
+                    }
+                    else
+                    {
+                        label3.Visible=false;
+                        timer1.Enabled = true;
+                        pauseOverlay.Visible = false;
+                    }
                     break;
             }
         }

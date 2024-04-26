@@ -154,5 +154,8 @@
   <ItemGroup>
     <None Include="Resources\Back.PNG" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Paused.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
