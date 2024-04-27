@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Media;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace C__Doodle
@@ -10,9 +12,70 @@ namespace C__Doodle
     {
         Player player;
         Timer timer1;
+        bool isGameStart = false;
+        private bool isPaused = false;
+        private PictureBox pauseOverlay;
+        private PictureBox gameOver;
+        private SoundPlayer backMusicPlayer;
         public Form1()
         {
             InitializeComponent();
+            CreateMenu();
+            this.KeyPreview = true;
+            gameOver = new PictureBox();
+            gameOver.Image = Properties.Resources.GameOver;
+            gameOver.SizeMode = PictureBoxSizeMode.AutoSize;
+            gameOver.Visible = false;
+            gameOver.BringToFront();
+            gameOver.Visible=false;
+        }
+        private void CreateMenu()
+        {
+            BackgroundImage = Properties.Resources.Menu;
+            Button playButton = new Button();
+            playButton.BackColor = Color.FromArgb(208, 249, 255);
+            playButton.Text = "Играть";
+            playButton.Location = new Point(160, 350);
+            playButton.Size = new Size(100, 30);
+            playButton.Click += new EventHandler(PlayButtonClick);
+            Button exitButton = new Button();
+            exitButton.Text = "Выход";
+            exitButton.BackColor = Color.FromArgb(208, 249, 255);
+            exitButton.Location = new Point(160, 650);
+            exitButton.Size = new Size(100, 30);
+            exitButton.Click += new EventHandler(ExitButtonClick);
+            Controls.Add(playButton);
+            Controls.Add(exitButton);
+            label3.Visible = false;
+            //backMusicPlayer = new SoundPlayer(Properties.Resources.BackMusic);
+            //PlaySound(backMusicPlayer);
+        }
+        private void GameOver()
+        {
+            gameOver.Visible = true;
+            Button playButton = new Button();
+            playButton.BackColor = Color.FromArgb(208, 249, 255);
+            playButton.Text = "Играть";
+            playButton.Location = new Point(160, 600);
+            playButton.Size = new Size(100, 30);
+            playButton.Click += new EventHandler(PlayButtonClick);
+            Controls.Add(playButton);
+            playButton.BringToFront();
+            label4.Visible = true;
+            label1.Visible = false;
+            label2.Visible = false;
+            label4.BackColor = Color.FromArgb(208, 249, 255);
+            label4.Text = "" + PlatformController.score;
+            label4.AutoSize = true;
+            label4.BringToFront();
+        }
+        private void ExitButtonClick(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void PlayButtonClick(object sender, EventArgs e)
+        {
+            isGameStart = true;
             Init();
             timer1 = new Timer();
             timer1.Interval = 15;
@@ -21,13 +84,20 @@ namespace C__Doodle
             this.KeyDown += new KeyEventHandler(OnKeyboardPressed);
             this.KeyUp += new KeyEventHandler(OnKeyboardUp);
             this.BackgroundImage = Properties.Resources.Back;
-            this.Height = 800;
-            this.Width = 430;
             this.Paint += new PaintEventHandler(OnRepaint);
+            foreach(Control control in Controls)
+                if (control is Button)
+                    control.Visible = false;
+            gameOver.Visible = false;
+            label4.Visible = false;
+            label1.Visible = true;
+            label2.Visible = true;
+            this.Focus();
         }
-        private PictureBox pauseOverlay;
         public void Init()
         {
+            gameOver.Visible = false;
+            label4.Visible = false;
             PlatformController.platforms = new List<Platform> ();
             PlatformController.AddPlatform(new PointF(100, 400));
             PlatformController.startPlatformPosY = 400;
@@ -41,8 +111,10 @@ namespace C__Doodle
             pauseOverlay.Image = Properties.Resources.Paused;
             pauseOverlay.SizeMode = PictureBoxSizeMode.AutoSize;
             pauseOverlay.Visible = false;
+            this.Controls.Add(gameOver);
             this.Controls.Add(pauseOverlay);
-            label3.Visible = false; 
+            label3.Visible = false;
+            label4.Visible = false;
             pauseOverlay.BringToFront();
             player = new Player();
         }
@@ -55,31 +127,11 @@ namespace C__Doodle
                 case "Space":
                     PlatformController.CreateBullet(new PointF(player.physics.transform.position.X 
                         + player.physics.transform.size.Width / 2, player.physics.transform.position.Y));
+                    //SoundPlayer shoot = new SoundPlayer(Properties.Resources.Shoot);
+                    //shoot.Play();
                     break;
-                //case "Tab":
-                //    if (PlatformController.money >= 100)
-                //    {
-                //        PlatformController.money -= 100;
-                //        player.sprite = Properties.Resources.PersonageArmour;
-                //        player.physics.usedBonus = true;
-                //        System.Timers.Timer timer = new System.Timers.Timer();
-                //        timer.Interval = 30000;
-                //        player.physics.usedBonus = true;
-                //        timer.Elapsed += (s, es) =>
-                //        {
-                //            player.sprite = Properties.Resources.Personage;
-                //            player.physics.usedBonus = false;
-                //            timer.Stop();
-                //            timer.Dispose();
-                //        };
-                //        timer.Start();
-                //    }
-                //    else
-                //        PlatformController.money = 1000;
-                //    break;
             }
         }
-        private bool isPaused = false;
         private void OnKeyboardPressed(object sender, KeyEventArgs e)
         {
             switch(e.KeyCode.ToString())
@@ -99,7 +151,7 @@ namespace C__Doodle
                     break;
                 case "Tab":
                     isPaused = !isPaused;
-                    if (isPaused)
+                    if  (isPaused)
                     {
                         label3.Visible = true;
                         label3.BackColor = Color.FromArgb(208, 249, 255);
@@ -120,10 +172,12 @@ namespace C__Doodle
         }
         private void Update(object sender, EventArgs e)
         {
-            this.Text = "C# Doodle";
             if ((player.physics.transform.position.Y >= PlatformController.platforms[0].transform.position.Y + 200)
              || (player.physics.StandartCollidePlayerWithObjects(true, false)))
-                Init();
+            {
+                GameOver();
+                timer1.Stop();
+            }
             player.physics.StandartCollidePlayerWithObjects(false, true);
             if (PlatformController.bullets.Count > 0)
             {
@@ -145,6 +199,8 @@ namespace C__Doodle
                     if (PlatformController.enemies[i].physics.StandartCollide())
                     {
                         PlatformController.RemoveEnemy(i);
+                        //SoundPlayer killEnemy = new SoundPlayer(Properties.Resources.DeathEnemy);
+                        //killEnemy.Play();
                         PlatformController.money+=25;
                         break;
                     }
@@ -153,6 +209,10 @@ namespace C__Doodle
             player.physics.AddPhysics();
             FollowPlayer();
             Invalidate();
+        }
+        public async void PlaySound(SoundPlayer soundPlayer)
+        {
+            await Task.Run(() => soundPlayer.PlaySync());
         }
         public void FollowPlayer()
         {

@@ -22,11 +22,11 @@ namespace C__Doodle.Classes
 
         public static void GenerateStartSequence()
         {
-            Random r = new Random();
+            Random random = new Random();
             for (int i = 0; i < 10; i++)
             {
-                var x = r.Next(0, 270);
-                var y = r.Next(50, 60);
+                var x = random.Next(0, 270);
+                var y = random.Next(50, 60);
                 startPlatformPosY -= y;
                 PointF position = new PointF(x, startPlatformPosY);
                 Platform platform = new Platform(position);
@@ -38,7 +38,7 @@ namespace C__Doodle.Classes
         public static void CreateEnemy(Platform platform)
         {
             Random random = new Random();
-            var enemyType = random.Next(1, 3);
+            var enemyType = random.Next(1, 5);
             switch (enemyType)
             {
                 case 1:
@@ -47,6 +47,14 @@ namespace C__Doodle.Classes
                     break;
                 case 2:
                     enemy = new Enemy(new PointF(platform.transform.position.X + (platform.sizeX / 2)-30, platform.transform.position.Y - 50), enemyType);
+                    enemies.Add(enemy);
+                    break;
+                case 3:
+                    enemy = new Enemy(new PointF(platform.transform.position.X + (platform.sizeX / 2) - 30, platform.transform.position.Y - 53), enemyType);
+                    enemies.Add(enemy);
+                    break;
+                case 4:
+                    enemy = new Enemy(new PointF(platform.transform.position.X + (platform.sizeX / 2) - 30, platform.transform.position.Y - 53), enemyType);
                     enemies.Add(enemy);
                     break;
             }
@@ -84,12 +92,11 @@ namespace C__Doodle.Classes
             PointF position = new PointF(x, startPlatformPosY);
             Platform platform = new Platform(position);
             platforms.Add(platform);
-
-            var c = random.Next(1, 10);
-            if (c==1)
+            var enemyCreationChance = random.Next(1, 10);
+            if (enemyCreationChance == 1)
                 CreateEnemy(platform);
-            var d = random.Next(1, 15);
-            if (d == 1)
+            var bonusCreationChance = random.Next(1, 15);
+            if (bonusCreationChance == 1)
                 CreateBonus(platform);
         }
 

@@ -121,17 +121,41 @@
   <data name="Back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Back.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BackMusic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BackMusic.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="bullet" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bullet.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ColaBonus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ColaBonus.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="DeathEnemy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeathEnemy.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="drink" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\drink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GameOver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GameOver.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Jump" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Jump.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Menu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Monst" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Monst.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Monster1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Monster1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Monster3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Monster3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Monster4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Monster4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Paused" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Paused.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -150,6 +174,12 @@
   </data>
   <data name="PlayerShot" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PlayerShot.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shoot" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shoot.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SprinBonus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SprinBonus.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="spring" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\spring.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

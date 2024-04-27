@@ -22,7 +22,7 @@ namespace C__Doodle.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace C__Doodle.Properties {
         ///   Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("C__Doodle.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace C__Doodle.Properties {
         ///   обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace C__Doodle.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Back {
+        public static System.Drawing.Bitmap Back {
             get {
                 object obj = ResourceManager.GetObject("Back", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -71,9 +71,18 @@ namespace C__Doodle.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream BackMusic {
+            get {
+                return ResourceManager.GetStream("BackMusic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bullet {
+        public static System.Drawing.Bitmap bullet {
             get {
                 object obj = ResourceManager.GetObject("bullet", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -81,9 +90,27 @@ namespace C__Doodle.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream ColaBonus {
+            get {
+                return ResourceManager.GetStream("ColaBonus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream DeathEnemy {
+            get {
+                return ResourceManager.GetStream("DeathEnemy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap drink {
+        public static System.Drawing.Bitmap drink {
             get {
                 object obj = ResourceManager.GetObject("drink", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +120,36 @@ namespace C__Doodle.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Monst {
+        public static System.Drawing.Bitmap GameOver {
+            get {
+                object obj = ResourceManager.GetObject("GameOver", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream Jump {
+            get {
+                return ResourceManager.GetStream("Jump", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Menu {
+            get {
+                object obj = ResourceManager.GetObject("Menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Monst {
             get {
                 object obj = ResourceManager.GetObject("Monst", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +159,7 @@ namespace C__Doodle.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Monster1 {
+        public static System.Drawing.Bitmap Monster1 {
             get {
                 object obj = ResourceManager.GetObject("Monster1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,7 +169,27 @@ namespace C__Doodle.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Paused {
+        public static System.Drawing.Bitmap Monster3 {
+            get {
+                object obj = ResourceManager.GetObject("Monster3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Monster4 {
+            get {
+                object obj = ResourceManager.GetObject("Monster4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Paused {
             get {
                 object obj = ResourceManager.GetObject("Paused", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -123,7 +199,7 @@ namespace C__Doodle.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Personage {
+        public static System.Drawing.Bitmap Personage {
             get {
                 object obj = ResourceManager.GetObject("Personage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -133,7 +209,7 @@ namespace C__Doodle.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PersonageArmour {
+        public static System.Drawing.Bitmap PersonageArmour {
             get {
                 object obj = ResourceManager.GetObject("PersonageArmour", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -143,7 +219,7 @@ namespace C__Doodle.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PersonageLeft {
+        public static System.Drawing.Bitmap PersonageLeft {
             get {
                 object obj = ResourceManager.GetObject("PersonageLeft", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -153,7 +229,7 @@ namespace C__Doodle.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap platform {
+        public static System.Drawing.Bitmap platform {
             get {
                 object obj = ResourceManager.GetObject("platform", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -163,7 +239,7 @@ namespace C__Doodle.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap PlayerShot {
+        public static System.Drawing.Bitmap PlayerShot {
             get {
                 object obj = ResourceManager.GetObject("PlayerShot", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -171,9 +247,27 @@ namespace C__Doodle.Properties {
         }
         
         /// <summary>
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream Shoot {
+            get {
+                return ResourceManager.GetStream("Shoot", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.IO.UnmanagedMemoryStream, аналогичного System.IO.MemoryStream.
+        /// </summary>
+        public static System.IO.UnmanagedMemoryStream SprinBonus {
+            get {
+                return ResourceManager.GetStream("SprinBonus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap spring {
+        public static System.Drawing.Bitmap spring {
             get {
                 object obj = ResourceManager.GetObject("spring", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));

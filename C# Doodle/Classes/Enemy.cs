@@ -16,6 +16,14 @@ namespace C__Doodle.Classes
                     sprite = Properties.Resources.Monster1;
                     physics = new Physics(pos, new Size(60, 60));
                     break;
+                case 3:
+                    sprite = Properties.Resources.Monster3;
+                    physics = new Physics(pos, new Size(60, 60));
+                    break;
+                case 4:
+                    sprite = Properties.Resources.Monster4;
+                    physics = new Physics(pos, new Size(60, 60));
+                    break;
             }
         }
     }
