@@ -127,8 +127,8 @@ namespace C__Doodle.Classes
                         if (gravity > 0)
                         {
                             AddForce();
-                            //SoundPlayer jump = new SoundPlayer(Properties.Resources.Jump);
-                            //jump.Play();
+                            SoundPlayer jump = new SoundPlayer(Properties.Resources.Jump);
+                            jump.Play();
                             if (!platform.isTouchedByPlayer)
                             {
                                 PlatformController.score +=20;

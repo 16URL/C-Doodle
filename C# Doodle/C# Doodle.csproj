@@ -94,6 +94,8 @@
     <Compile Include="Classes\Bonus.cs" />
     <Compile Include="Classes\Bullet.cs" />
     <Compile Include="Classes\Enemy.cs" />
+    <Compile Include="Classes\GameOver.cs" />
+    <Compile Include="Classes\MenuScreen.cs" />
     <Compile Include="Classes\Physics.cs" />
     <Compile Include="Classes\Platform.cs" />
     <Compile Include="Classes\PlatformController.cs" />
