@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Media;
 using System.Windows.Forms;
 
 namespace C__Doodle.Classes
@@ -31,6 +32,8 @@ namespace C__Doodle.Classes
             exitButton.Click += new EventHandler(ExitButtonClick);
             form.Controls.Add(playButton);
             form.Controls.Add(exitButton);
+            //form.backMusicPlayer = new SoundPlayer(Properties.Resources.BackMusic);
+            //form.PlaySound(form.backMusicPlayer);
         }
         private void PlayButtonClick(object sender, EventArgs e)
         {

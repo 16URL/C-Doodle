@@ -15,9 +15,10 @@ namespace C__Doodle
         public bool isGameStart = false;
         private bool isPaused = false;
         private PictureBox pauseOverlay;
-        private SoundPlayer backMusicPlayer;
+        public SoundPlayer backMusicPlayer;
         private GameOver gameOver;
         private MenuScreen menuScreen;
+        private GameRender gameRender;
         public Form1()
         {
             InitializeComponent();
@@ -25,13 +26,12 @@ namespace C__Doodle
             this.KeyPreview = true;
             gameOver = new GameOver(this);
             menuScreen = new MenuScreen(this);
+            gameRender = new GameRender(this);
         }
         private void CreateMenu()
         {
             BackgroundImage = Properties.Resources.Menu;
             label3.Visible = false;
-            //backMusicPlayer = new SoundPlayer(Properties.Resources.BackMusic);
-            //PlaySound(backMusicPlayer);
         }
         private void GameOver()
         {
@@ -52,7 +52,6 @@ namespace C__Doodle
             PlatformController.AddPlatform(new PointF(100, 400));
             PlatformController.startPlatformPosY = 400;
             PlatformController.score = 0;
-            PlatformController.money = 0;
             PlatformController.GenerateStartSequence();
             PlatformController.bullets.Clear();
             PlatformController.enemies.Clear();
@@ -152,7 +151,7 @@ namespace C__Doodle
                         PlatformController.RemoveEnemy(i);
                         SoundPlayer killEnemy = new SoundPlayer(Properties.Resources.DeathEnemy);
                         killEnemy.Play();
-                        PlatformController.money += 25;
+                        PlatformController.score += 15;
                         break;
                     }
                 }
@@ -192,30 +191,8 @@ namespace C__Doodle
         }
         public void OnRepaint(object sender, PaintEventArgs e)
         {
-            Graphics g = e.Graphics;
-            if (PlatformController.platforms.Count > 0)
-            {
-                for (int i = 0; i < PlatformController.platforms.Count; i++)
-                    PlatformController.platforms[i].DrawSprite(g);
-            }
-            if (PlatformController.bullets.Count > 0)
-            {
-                for (int i = 0; i < PlatformController.bullets.Count; i++)
-                    PlatformController.bullets[i].DrawSprite(g);
-            }
-            if (PlatformController.enemies.Count > 0)
-            {
-                for (int i = 0; i < PlatformController.enemies.Count; i++)
-                    PlatformController.enemies[i].DrawSprite(g);
-            }
-            if (PlatformController.bonuses.Count > 0)
-            {
-                for (int i = 0; i < PlatformController.bonuses.Count; i++)
-                    PlatformController.bonuses[i].DrawSprite(g);
-            }
+            gameRender.Paint(e.Graphics);
             label1.Text = "Score - " + PlatformController.score;
-            label2.Text = "Money - " + PlatformController.money;
-            player.DrawSprite(g);
         }
     }
 }

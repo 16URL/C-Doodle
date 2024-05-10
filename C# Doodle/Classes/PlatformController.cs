@@ -12,7 +12,6 @@ namespace C__Doodle.Classes
         public static List<Bonus> bonuses = new List<Bonus>();
         public static int startPlatformPosY = 500;
         public static int score = 0;
-        public static int money = 0;
 
         public static void AddPlatform(PointF position)
         {

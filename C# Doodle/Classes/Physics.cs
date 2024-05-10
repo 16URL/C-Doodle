@@ -96,15 +96,15 @@ namespace C__Doodle.Classes
                             if (bonus.type == 1 && !usedBonus)
                             {
                                 usedBonus = true;
-                                //SoundPlayer springBonus = new SoundPlayer(Properties.Resources.SprinBonus);
-                                //springBonus.Play();
+                                SoundPlayer springBonus = new SoundPlayer(Properties.Resources.SprinBonus);
+                                springBonus.Play();
                                 AddForce(-30);
                             }
                             if (bonus.type == 2 && !usedBonus)
                             {
                                 usedBonus = true;
-                                //SoundPlayer drinkBonus = new SoundPlayer(Properties.Resources.ColaBonus);
-                                //drinkBonus.Play();
+                                SoundPlayer drinkBonus = new SoundPlayer(Properties.Resources.ColaBonus);
+                                drinkBonus.Play();
                                 AddForce(-60);
                             }
                             PlatformController.score += 10;
