@@ -69,7 +69,6 @@ namespace C__Doodle.Classes
         {
             Random random = new Random();
             var bonusType = random.Next(1, 3);
-
             switch (bonusType)
             {
                 case 1:
@@ -102,20 +101,14 @@ namespace C__Doodle.Classes
         public static void ClearPlatforms()
         {
             for (int i = 0;i < platforms.Count; i++)
-            {
                 if (platforms[i].transform.position.Y >=700)
                     platforms.RemoveAt(i);
-            }
             for (int i = 0; i < enemies.Count; i++)
-            {
                 if (enemies[i].physics.transform.position.Y >= 700)
                     enemies.RemoveAt(i);
-            }
             for (int i = 0; i < bonuses.Count; i++)
-            {
                 if (bonuses[i].physics.transform.position.Y >= 700)
                     bonuses.RemoveAt(i);
-            }
         }
 
         public static void RemoveEnemy(int i)

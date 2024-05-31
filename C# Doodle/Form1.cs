@@ -145,7 +145,6 @@ namespace C__Doodle
             if (PlatformController.enemies.Count > 0)
             {
                 for (int i = 0; i < PlatformController.enemies.Count; i++)
-                {
                     if (PlatformController.enemies[i].physics.StandartCollide())
                     {
                         PlatformController.RemoveEnemy(i);
@@ -154,8 +153,11 @@ namespace C__Doodle
                         PlatformController.score += 15;
                         break;
                     }
-                }
             }
+            if (player.physics.transform.position.X < 0)
+                player.physics.transform.position.X = this.ClientSize.Width - player.physics.transform.size.Width;
+            if (player.physics.transform.position.X + player.physics.transform.size.Width > this.ClientSize.Width)
+                player.physics.transform.position.X = 0;
             player.physics.AddPhysics();
             FollowPlayer();
             Invalidate();
